@@ -35,8 +35,6 @@ app.use('/', projectsRouter);
 const multer = require("multer");
 const cors = require("cors");
 
-// const port = process.env.PORT || 3000;
-
 const upload = multer({ dest: "uploads/" });
 
 app.use(cors());
