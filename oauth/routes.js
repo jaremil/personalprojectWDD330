@@ -16,13 +16,13 @@ routes.get('/auth',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     res.redirect('/index');
-});
+  });
 
 routes.get("/auth/google/callback",
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     res.redirect('/index');
-});
+  });
 
 routes.get('/index', (req, res) => {
   if (!req.isAuthenticated()) {
