@@ -24,11 +24,11 @@ routes.get("/auth/google/callback",
     res.redirect('/index');
 });
 
-routes.get('/index.html', (req, res) => {
+routes.get('/index', (req, res) => {
   if (!req.isAuthenticated()) {
     return res.redirect('/');
   }
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 module.exports = routes;
