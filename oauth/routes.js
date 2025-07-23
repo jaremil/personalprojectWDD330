@@ -1,5 +1,7 @@
 const passport = require('passport');
 
+const express = require('express');
+
 const routes = require("express").Router();
 
 const path = require('path');
@@ -10,7 +12,7 @@ routes.get("/", async (req, res) => {
   res.send(`<a href="/auth">Login with Google</a>`);
 });
 
-routes.get("/auth", passport.authenticate('google', { scope: ['profile', 'email'] }));
+routes.get("/auth/google", passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 routes.get('/auth/',
   passport.authenticate('google', { failureRedirect: '/' }),
@@ -23,15 +25,6 @@ routes.get('/index', (req, res) => {
     return res.redirect('/');
   }
   res.redirect('./index.html');
-});
-
-
-routes.get("/index.html", (req, res) => {
-  if (!req.isAuthenticated()) {
-    return res.redirect('/');
-  }
-  
-  res.sendFile(path.resolve(__dirname, '..', 'index.html'));
 });
 
 module.exports = routes;
