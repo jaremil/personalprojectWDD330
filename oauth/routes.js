@@ -24,7 +24,7 @@ routes.get("/auth/google/callback",
     res.redirect('/index');
 });
 
-routes.get('/index', (req, res) => {
+routes.get('/index.html', (req, res) => {
   if (!req.isAuthenticated()) {
     return res.redirect('/');
   }
