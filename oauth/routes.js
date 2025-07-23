@@ -8,9 +8,17 @@ routes.get("/", (req, res) => {
   res.send(`<a href="/auth/google">Login with Google</a>`);
 });
 
+
+
 routes.get("/auth/google", passport.authenticate('google', {
   scope: ['profile', 'email']
 }));
+
+routes.get('/auth/',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.redirect('/index');
+});
 
 routes.get("/auth/google/callback",
   passport.authenticate('google', { failureRedirect: '/' }),
