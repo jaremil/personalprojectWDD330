@@ -25,4 +25,13 @@ routes.get('/index', (req, res) => {
   res.redirect('./index.html');
 });
 
+
+routes.get("/index.html", (req, res) => {
+  if (!req.isAuthenticated()) {
+    return res.redirect('/');
+  }
+  
+  res.sendFile(path.resolve(__dirname, '..', 'index.html'));
+});
+
 module.exports = routes;
