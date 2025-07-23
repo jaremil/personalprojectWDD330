@@ -4,7 +4,7 @@ const routes = require("express").Router();
 
 const path = require('path');
 
-const { User } = require("./connection");
+const { User } = require("../data/connection");
 
 routes.get("/", async (req, res) => {
   res.send(`<a href="/auth/signin">Login with Google</a>`);
