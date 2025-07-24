@@ -1,0 +1,76 @@
+:root {
+  --heading_font: Tahoma,  sans-serif;
+  --body_font:  Arial, sans-serif;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  background: linear-gradient(-45deg, #262894, #18bee8, #4245a1, #6b63a1);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+    font-family: var(--heading_font);
+    color: white;
+    font-size: 5rem;
+    letter-spacing: 45px;
+}
+
+h2, h3 {
+    font-family: var(--heading_font);
+    color: var(--base_color);
+}
+
+p, span {
+    font-family: var(--body_font);
+}
+
+.searchbar {
+  align-items: center;
+  height: 30px;
+  width: 90%;
+  margin: 20px auto;
+  background: #fff;
+  border-color: var(--accent_color);
+  border-radius: 40px;
+  padding: 0px 0px 0px 8px;
+
+}
+
+.searchbar:hover {
+  box-shadow: 0 4px 12px rgba(1, 255, 234, 0.477);
+}
+
+button {
+  margin-bottom: 80px;
+  font-family: var(--body_font);
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #262894;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  box-shadow: 0 4px 12px rgba(1, 255, 234, 0.477);
+}

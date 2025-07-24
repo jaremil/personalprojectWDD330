@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Weather</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="/modules/api.js" defer></script>
+  <script src="/modules/main.js" defer></script>
+  <script src="/modules/ui.js" defer></script>
+  <script src="/modules/validation.js" defer></script>
 </head>
+
 <body>
-  <input id="city-input" placeholder="Enter city name" />
-  <button id="add-city">Add City</button>
-  <div id="weather-container"></div>
-  <ul id="favorites-list"></ul>
+
+  <h1>Weather</h1>
+
+  <div id="weather"></div>
+
+  <input class="searchbar" type="text" id="city" placeholder="Enter city name" />
+  <input class="searchbar" type="text" placeholder="Enter country name" />
+  <br>
+
+  <button onclick="getWeather()">Search</button>
+  <button onclick="clearSessionStorage()">Clear</button>
+  <button onclick="saveToLocalStorage()">Save as Favorite</button>
+
+  <button onclick="displaySavedWeather()">Show Favorites</button>
+  <br>
+
+  <input class="searchbar" type="text" id="deleteCity" placeholder="City to delete" />
+  <button onclick="localStorage.clear(); alert('All data cleared');">Clear Favorites</button>
+
+  <button onclick="deleteCityWeather()">Delete Favorite</button>
+   
 </body>
 </html>
