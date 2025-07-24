@@ -18,7 +18,7 @@ routes.get('/auth',
     res.redirect('/index');
   });
 
-routes.get("/auth/google/callback",
+routes.get("/auth/callback",
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     res.redirect('/index');
